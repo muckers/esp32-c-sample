@@ -7,17 +7,18 @@ resolver = "2"
 rust-version = "1.66"
 
 [profile.release]
-opt-level = "s"
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true  # Automatically strip symbols from the binary.
+panic = "abort"
 
 [profile.dev]
 debug = true    # Symbols are nice and they don't increase the size on Flash
 opt-level = "z"
 
 [features]
-
 default = ["std", "hal", "esp-idf-sys/native"]
-
-
 pio = ["esp-idf-sys/pio"]
 all = ["std", "nightly", "experimental", "embassy"]
 hal = ["esp-idf-hal", "embedded-svc", "esp-idf-svc"]
@@ -33,7 +34,6 @@ esp-idf-sys = { version = "0.33", default-features = false }
 esp-idf-hal = { version = "0.41", optional = true, default-features = false }
 esp-idf-svc = { version = "0.46", optional = true, default-features = false }
 embedded-svc = { version = "0.25", optional = true, default-features = false }
-anyhow = "1.0.71"
 
 [build-dependencies]
 embuild = "0.31.2"
