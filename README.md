@@ -67,6 +67,7 @@ As I said, I am using this project to continue my Rust journey, which I am early
 
 All that is to say, I have a very basic understanding, and would love more expert help on this sample project in the following areas:
 
+1. Get a nostd version of this sample working. I've not been able to get any of the nostd samples out there to build and run.
 1. The code for the C3 and C6 samples are identical except for the GPIO pin used for the LED. I would love to collapse the sample into a single code base, since other than the LED the only differences are build flag for the two different processors. I am not sure how to accommodate this myself.
 2. Test these instructions on Linux (or Windows) and help me update with any differences so more people on more platforms can use this for ESP32 development.
 3. Expand the samples to do other things. Both the C3 and C6 have an addressable RGB LED that I am not sure how to control. Would be cool to expand the samples to demo this LED.
